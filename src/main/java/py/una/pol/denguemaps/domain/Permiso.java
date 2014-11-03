@@ -54,7 +54,7 @@ import javax.persistence.ManyToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Entity
+//@Entity
 public class Permiso implements Serializable {
 
 	private static final long serialVersionUID = 1L;

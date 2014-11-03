@@ -11,13 +11,13 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.private String See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License version 3
- * along with this program; if not,  see <http://www.gnu.org/licenses/>
+ * along with this program; if not,private String see <http://www.gnu.org/licenses/>
  * or write to the Free Software Foundation, Inc., 51 Franklin Street,
- * Fifth Floor, Boston, MA  02110-1301, USA.
+ * Fifth Floor, Boston, MAprivate String 02110-1301, USA.
  *
 ----------------------------------------------------------------------------
  * Este archivo es parte del Framework TICPY.
@@ -51,8 +51,8 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-//@Entity
-public class Bookmark implements Serializable {
+@Entity
+public class Distrito implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -61,55 +61,90 @@ public class Bookmark implements Serializable {
 	 */
 
 	@Id
-	@GeneratedValue(strategy = SEQUENCE)
+	// @GeneratedValue(strategy = SEQUENCE)
 	@Column(name = "id", unique = true, nullable = false)
-	private Long id;
+	private int id;
 
 	@Column
-	private String description;
+	private String departamento_codigo;
 
 	@Column
-	private String link;
+	private String departamento_descripcion;
 
-	public Bookmark() {
-		super();
-	}
+	@Column
+	private String distrito_codigo;
 
-	public Bookmark(String description, String link) {
-		this.description = description;
-		this.link = link;
-	}
+	@Column
+	private String distrito_descripcion;
 
-	public Long getId() {
+	@Column
+	private String codigo;
+
+	@Column
+	private int cantidad_man;
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDepartamento_codigo() {
+		return departamento_codigo;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDepartamento_codigo(String departamento_codigo) {
+		this.departamento_codigo = departamento_codigo;
 	}
 
-	public String getLink() {
-		return link;
+	public String getDepartamento_descripcion() {
+		return departamento_descripcion;
 	}
 
-	public void setLink(String link) {
-		this.link = link;
+	public void setDepartamento_descripcion(String departamento_descripcion) {
+		this.departamento_descripcion = departamento_descripcion;
 	}
 
-	public static Bookmark valueOf(String json) {
+	public String getDistrito_codigo() {
+		return distrito_codigo;
+	}
+
+	public void setDistrito_codigo(String distrito_codigo) {
+		this.distrito_codigo = distrito_codigo;
+	}
+
+	public String getDistrito_descripcion() {
+		return distrito_descripcion;
+	}
+
+	public void setDistrito_descripcion(String distrito_descripcion) {
+		this.distrito_descripcion = distrito_descripcion;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public int getCantidad_man() {
+		return cantidad_man;
+	}
+
+	public void setCantidad_man(int cantidad_man) {
+		this.cantidad_man = cantidad_man;
+	}
+
+	public static Distrito valueOf(String json) {
 		ObjectMapper mapper = new ObjectMapper();
-		Bookmark bookmark = null;
+		Distrito bookmark = null;
 
 		try {
-			bookmark = mapper.readValue(json, Bookmark.class);
+			bookmark = mapper.readValue(json, Distrito.class);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -45,13 +45,17 @@
 	<!--
 	-->
 
-	<persistence-unit name="bookmark-ds" transaction-type="RESOURCE_LOCAL">
-		<non-jta-data-source>java:/bookmarkDS</non-jta-data-source>
+	<persistence-unit name="denguemaps-ds" transaction-type="RESOURCE_LOCAL">
+		<non-jta-data-source>java:/denguemapsDS</non-jta-data-source>
 
-		<class>py.una.pol.denguemaps.domain.Bookmark</class>
+		<class>py.una.pol.denguemaps.domain.Notificacion</class>
+		<class>py.una.pol.denguemaps.domain.Departamento</class>
+		<class>py.una.pol.denguemaps.domain.Distrito</class>
+		<class>py.una.pol.denguemaps.domain.Barrio</class>
+		<!-- <class>py.una.pol.denguemaps.domain.Bookmark</class>
 		<class>py.una.pol.denguemaps.domain.Usuario</class>
 		<class>py.una.pol.denguemaps.domain.Rol</class>
-		<class>py.una.pol.denguemaps.domain.Permiso</class>
+		<class>py.una.pol.denguemaps.domain.Permiso</class>  -->
 		
 		<properties>
 			<property name="hibernate.show_sql" value="false" />

@@ -53,7 +53,7 @@ import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Entity
+//@Entity
 public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 1L;

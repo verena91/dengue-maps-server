@@ -11,13 +11,13 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.private String See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License version 3
- * along with this program; if not,  see <http://www.gnu.org/licenses/>
+ * along with this program; if not,private String see <http://www.gnu.org/licenses/>
  * or write to the Free Software Foundation, Inc., 51 Franklin Street,
- * Fifth Floor, Boston, MA  02110-1301, USA.
+ * Fifth Floor, Boston, MAprivate String 02110-1301, USA.
  *
 ----------------------------------------------------------------------------
  * Este archivo es parte del Framework TICPY.
@@ -51,8 +51,8 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-//@Entity
-public class Bookmark implements Serializable {
+@Entity
+public class Barrio implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -61,55 +61,123 @@ public class Bookmark implements Serializable {
 	 */
 
 	@Id
-	@GeneratedValue(strategy = SEQUENCE)
+	// @GeneratedValue(strategy = SEQUENCE)
 	@Column(name = "id", unique = true, nullable = false)
-	private Long id;
+	private int id;
 
 	@Column
-	private String description;
+	private String departamento_codigo;
 
 	@Column
-	private String link;
+	private String departamento_descripcion;
 
-	public Bookmark() {
-		super();
-	}
+	@Column
+	private String distrito_codigo;
 
-	public Bookmark(String description, String link) {
-		this.description = description;
-		this.link = link;
-	}
+	@Column
+	private String distrito_descripcion;
 
-	public Long getId() {
+	@Column
+	private String codigo;
+
+	@Column
+	private String area;
+
+	@Column
+	private String barrio_codigo;
+
+	@Column
+	private String barrio_descripcion;
+
+	@Column
+	private String cantidad_viv;
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDepartamento_codigo() {
+		return departamento_codigo;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDepartamento_codigo(String departamento_codigo) {
+		this.departamento_codigo = departamento_codigo;
 	}
 
-	public String getLink() {
-		return link;
+	public String getDepartamento_descripcion() {
+		return departamento_descripcion;
 	}
 
-	public void setLink(String link) {
-		this.link = link;
+	public void setDepartamento_descripcion(String departamento_descripcion) {
+		this.departamento_descripcion = departamento_descripcion;
 	}
 
-	public static Bookmark valueOf(String json) {
+	public String getDistrito_codigo() {
+		return distrito_codigo;
+	}
+
+	public void setDistrito_codigo(String distrito_codigo) {
+		this.distrito_codigo = distrito_codigo;
+	}
+
+	public String getDistrito_descripcion() {
+		return distrito_descripcion;
+	}
+
+	public void setDistrito_descripcion(String distrito_descripcion) {
+		this.distrito_descripcion = distrito_descripcion;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public String getBarrio_codigo() {
+		return barrio_codigo;
+	}
+
+	public void setBarrio_codigo(String barrio_codigo) {
+		this.barrio_codigo = barrio_codigo;
+	}
+
+	public String getBarrio_descripcion() {
+		return barrio_descripcion;
+	}
+
+	public void setBarrio_descripcion(String barrio_descripcion) {
+		this.barrio_descripcion = barrio_descripcion;
+	}
+
+	public String getCantidad_viv() {
+		return cantidad_viv;
+	}
+
+	public void setCantidad_viv(String cantidad_viv) {
+		this.cantidad_viv = cantidad_viv;
+	}
+
+	public static Barrio valueOf(String json) {
 		ObjectMapper mapper = new ObjectMapper();
-		Bookmark bookmark = null;
+		Barrio bookmark = null;
 
 		try {
-			bookmark = mapper.readValue(json, Bookmark.class);
+			bookmark = mapper.readValue(json, Barrio.class);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
