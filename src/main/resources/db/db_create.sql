@@ -1,4 +1,4 @@
-CREATE DATABASE bookmark
+CREATE DATABASE denguemaps
   WITH OWNER = postgres
        ENCODING = 'UTF-8'
        TABLESPACE = pg_default
