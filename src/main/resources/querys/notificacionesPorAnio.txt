@@ -1,0 +1,1 @@
+select noti.departamento, CAST(coalesce(noti.semana, '0') AS integer), count(*) from notificacion noti where anio={0} and semana not like '#VALUE!' group by departamento, semana order by CAST(coalesce(noti.semana, '0') AS integer), departamento;
