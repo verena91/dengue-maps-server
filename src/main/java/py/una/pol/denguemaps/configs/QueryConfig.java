@@ -7,6 +7,8 @@ public class QueryConfig {
 	private String root;
 
 	private String permisoQuery;
+	
+	private String notificacionesPorAnioQuery;
 
 	public String getPermisoQuery() {
 		return permisoQuery;
@@ -14,5 +16,9 @@ public class QueryConfig {
 
 	public String getRoot() {
 		return root;
+	}
+
+	public String getNotificacionesPorAnioQuery() {
+		return notificacionesPorAnioQuery;
 	}
 }
