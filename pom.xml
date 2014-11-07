@@ -93,7 +93,7 @@
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>jaxrs-api</artifactId>
 		</dependency>
-		<dependency>
+		<dependency> 
 		    <groupId>com.cacheonix</groupId>
 		    <artifactId>cacheonix</artifactId>
 		    <version>2.0</version>

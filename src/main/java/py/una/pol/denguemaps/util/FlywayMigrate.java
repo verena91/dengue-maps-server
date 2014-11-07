@@ -72,7 +72,7 @@ public class FlywayMigrate implements Integrator {
 			// flyway.init();
 
 			System.out.println("\n\n>> A punto de ejecutar FlyWay migrate...");
-			flyway.migrate();
+			//flyway.migrate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
