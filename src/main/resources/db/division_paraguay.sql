@@ -34,7 +34,7 @@ COPY departamento (id, departamento_codigo, departamento_descripcion)
 FROM '/home/verena/dengue-maps-server/src/main/resources/db/departamentos.csv' 
 DELIMITER ';' CSV HEADER;
 
-COPY distrito (id,codigo, distrito_codigo, distrito_descripcion, departamento_codigo, departamento_descripcion, cantidad_man) 
+COPY distrito (id, distrito_descripcion, departamento_codigo, departamento_descripcion, distrito_codigo, codigo, cantidad_man) 
 FROM '/home/verena/dengue-maps-server/src/main/resources/db/distritos.csv' 
 DELIMITER ';' CSV HEADER;
 
