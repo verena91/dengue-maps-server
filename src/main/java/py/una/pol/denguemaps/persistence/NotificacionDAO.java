@@ -42,47 +42,16 @@
  * 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
  */
 
-package py.una.pol.denguemaps.business;
+package py.una.pol.denguemaps.persistence;
 
-import java.util.List;
+import org.ticpy.tekoporu.stereotype.PersistenceController;
 
-import javax.inject.Inject;
+import py.una.pol.denguemaps.domain.Notificacion;
+import py.una.pol.denguemaps.util.JPACrud;
 
-import org.ticpy.tekoporu.pagination.Pagination;
-import org.ticpy.tekoporu.stereotype.BusinessController;
-import org.ticpy.tekoporu.template.PaginatedDelegateCrud;
-
-import py.una.pol.denguemaps.domain.Bookmark;
-import py.una.pol.denguemaps.persistence.BookmarkDAO;
-
-@BusinessController
-public class BookmarkBC extends
-		PaginatedDelegateCrud<Bookmark, Long, BookmarkDAO> {
+@PersistenceController
+public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private BookmarkDAO bookmarkDAO;
-
-	public List<Bookmark> findAll(String sortField, boolean sortOrder,
-			Bookmark filtro, Pagination pag) {
-		bookmarkDAO.setPagination(pag);
-		if (filtro != null) {
-			if (sortField != null) {
-				return bookmarkDAO.findAll(sortField, sortOrder, filtro);
-			} else {
-				return bookmarkDAO.findByExample(filtro);
-			}
-		} else {
-			if (sortField != null) {
-				return bookmarkDAO.findAll(sortField, sortOrder);
-			} else {
-				return bookmarkDAO.findAll();
-			}
-		}
-	}
-
-	public Bookmark updateBookmark(Bookmark b) {
-		return bookmarkDAO.updateBookmark(b);
-	}
 }

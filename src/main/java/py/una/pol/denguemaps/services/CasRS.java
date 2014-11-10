@@ -29,7 +29,7 @@ public class CasRS {
 		List<Map<String, Object>> permisosBD = casDAO.getPermisos(usuario);
 		for (Map<String, Object> map : permisosBD) {
 			Map<String, String> root1 = new HashMap<String, String>();
-			String codigo = "bookmark_" + map.get("recurso").toString() + "_"
+			String codigo = "modulo_" + map.get("recurso").toString() + "_"
 					+ map.get("operacion").toString();
 			root1.put("codigo", codigo);
 			root1.put("estado", "A");

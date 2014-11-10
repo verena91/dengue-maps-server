@@ -52,8 +52,7 @@
 		<class>py.una.pol.denguemaps.domain.Departamento</class>
 		<class>py.una.pol.denguemaps.domain.Distrito</class>
 		<class>py.una.pol.denguemaps.domain.Barrio</class>
-		<!-- <class>py.una.pol.denguemaps.domain.Bookmark</class>
-		<class>py.una.pol.denguemaps.domain.Usuario</class>
+		<!-- <class>py.una.pol.denguemaps.domain.Usuario</class>
 		<class>py.una.pol.denguemaps.domain.Rol</class>
 		<class>py.una.pol.denguemaps.domain.Permiso</class>  -->
 		

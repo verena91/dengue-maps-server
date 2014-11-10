@@ -1,7 +1,12 @@
 /*
- * CEAMSO-USAID
- * Copyright (C) 2014 Governance and Democracy Program
- * 
+ * TICPY Framework
+ * Copyright (C) 2012 Plan Director TICs
+ *
+----------------------------------------------------------------------------
+ * Originally developed by SERPRO
+ * Demoiselle Framework
+ * Copyright (C) 2010 SERPRO
+ *
 ----------------------------------------------------------------------------
  * This file is part of TICPY Framework.
  *
@@ -37,97 +42,44 @@
  * 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
  */
 
-package py.una.pol.denguemaps.domain;
+package py.una.pol.denguemaps.business;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import java.util.List;
 
-import java.io.Serializable;
-import java.io.StringWriter;
+import javax.inject.Inject;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.ticpy.tekoporu.pagination.Pagination;
+import org.ticpy.tekoporu.stereotype.BusinessController;
+import org.ticpy.tekoporu.template.PaginatedDelegateCrud;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import py.una.pol.denguemaps.domain.Notificacion;
+import py.una.pol.denguemaps.persistence.NotificacionDAO;
 
-//@Entity
-public class Bookmark implements Serializable {
+@BusinessController
+public class NotificacionBC extends
+		PaginatedDelegateCrud<Notificacion, Long, NotificacionDAO> {
 
 	private static final long serialVersionUID = 1L;
 
-	/*
-	 * If you are using Glassfish then remove the strategy attribute
-	 */
+	@Inject
+	private NotificacionDAO notificacionDAO;
 
-	@Id
-	@GeneratedValue(strategy = SEQUENCE)
-	@Column(name = "id", unique = true, nullable = false)
-	private Long id;
-
-	@Column
-	private String description;
-
-	@Column
-	private String link;
-
-	public Bookmark() {
-		super();
-	}
-
-	public Bookmark(String description, String link) {
-		this.description = description;
-		this.link = link;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
-	}
-
-	public static Bookmark valueOf(String json) {
-		ObjectMapper mapper = new ObjectMapper();
-		Bookmark bookmark = null;
-
-		try {
-			bookmark = mapper.readValue(json, Bookmark.class);
-		} catch (Exception e) {
-			e.printStackTrace();
+	public List<Notificacion> findAll(String sortField, boolean sortOrder,
+			Notificacion filtro, Pagination pag) {
+		notificacionDAO.setPagination(pag);
+		if (filtro != null) {
+			if (sortField != null) {
+				return notificacionDAO.findAll(sortField, sortOrder, filtro);
+			} else {
+				return notificacionDAO.findByExample(filtro);
+			}
+		} else {
+			if (sortField != null) {
+				return notificacionDAO.findAll(sortField, sortOrder);
+			} else {
+				return notificacionDAO.findAll();
+			}
 		}
-
-		return bookmark;
-	}
-
-	public String toString() {
-		ObjectMapper mapper = new ObjectMapper();
-		StringWriter json = new StringWriter();
-
-		try {
-			mapper.writeValue(json, this);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return json.toString();
 	}
 
 }
