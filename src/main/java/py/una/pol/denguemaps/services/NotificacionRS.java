@@ -41,6 +41,7 @@ public class NotificacionRS implements NotificacionAPI {
 	@Override
 	public Response getNotificaciones(int page, int limit, String sortField,
 			String sortOrder, Notificacion notificacion) {
+		System.out.println("+++++++++++++++++ Entro al servicio de notificaciones paginadas");
 		List<Notificacion> finalList = new ArrayList<Notificacion>();
 		PagedList<Notificacion> lista = new PagedList<Notificacion>();
 
@@ -56,7 +57,7 @@ public class NotificacionRS implements NotificacionAPI {
 		// setear order by
 		boolean asc = true;
 		if (sortField != null) {
-			if (sortOrder.compareTo("ASCENDING") != 0) {
+			if (sortOrder.compareTo("asc") != 0) {
 				asc = false;
 			}
 		}
@@ -67,7 +68,7 @@ public class NotificacionRS implements NotificacionAPI {
 		} else {
 			lista.setTotal(finalList.size());
 		}
-		return Response.ok(lista).build();
+		return Response.ok(finalList).build();
 	}
 
 	@Inject
