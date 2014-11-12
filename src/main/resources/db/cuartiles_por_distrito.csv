@@ -1,0 +1,265 @@
+id;departamento;distrito;cuartil_uno;cuartil_dos;cuartil_tres;tipo
+1;Concepcion;;3;13;46;D
+2;Concepcion;Concepcion;3;9;43;DD
+3;Concepcion;Belen;1;3;3;DD
+4;Concepcion;Horqueta;2;6;14;DD
+5;Concepcion;Loreto;1;2;6;DD
+6;Concepcion;San carlos;0;0;0;DD
+7;Concepcion;San lazaro;2;2;2;DD
+8;Concepcion;Yby ya'u;1;3;6;DD
+9;Concepcion;Vallemi;0;0;0;NN
+10;Concepcion;AZOTE'Y;0;0;0;DD
+11;Concepcion;SGTO. JOSE FELIX LOPEZ;;;;F
+12;San Pedro;;2;5;11;D
+13;San Pedro;SAN PEDRO DEL YCUAMANDIYU;1;2;2;DD
+14;San Pedro;Antequera;0;0;1;DD
+15;San Pedro;Chore;1;2;2;DD
+16;San Pedro;GENERAL ELIZARDO AQUINO;1;1;1;DD
+17;San Pedro;GENERAL RESQUIN;1;2;2;DD
+18;San Pedro;Lima;1;1;1;DD
+19;San Pedro;NUEVA GERMANIA;0;0;0;DD
+20;San Pedro;San pablo;0;0;1;DD
+21;San Pedro;Tacuati;1;1;1;DD
+22;San Pedro;VILLA DEL ROSARIO;1;1;1;DD
+23;San Pedro;SANTA ROSA DEL AGUARAY;1;2;4;DD
+24;San Pedro;San Estanislao;2;4;7;DD
+25;San Pedro;25 de diciembre;1;1;1;DD
+26;San Pedro;YATAITY DEL NORTE;1;1;1;DD
+27;San Pedro;Union;1;1;1;DD
+28;San Pedro;ITACURUBI DEL ROSARIO;1;1;1;DD
+29;San Pedro;Capiibary;1;1;2;DD
+30;San Pedro;GUAJAYVI;1;1;3;DD
+31;San Pedro;YRYVU CUA;0;0;0;DD
+32;San Pedro;LIBERACION;;;;F
+33;Cordillera;;3;8;24;D
+34;Cordillera;Caacupe;2;4;12;DD
+35;Cordillera;Altos;1;2;4;DD
+36;Cordillera;Arroyos y Esteros;1;2;3;DD
+37;Cordillera;Atyra;1;2;2;DD
+38;Cordillera;Caraguatay;1;1;2;DD
+39;Cordillera;Emboscada;1;1;2;DD
+40;Cordillera;Eusebio Ayala;1;2;3;DD
+41;Cordillera;Isla pucu;1;1;1;DD
+42;Cordillera;ITACURUBI DE LA CORDILLERA;1;2;3;DD
+43;Cordillera;Juan de mena;1;1;1;DD
+44;Cordillera;Loma grande;1;1;1;DD
+45;Cordillera;Mbocayaty del Yhaguy;1;1;1;DD
+46;Cordillera;Nueva Colombia;1;1;1;DD
+47;Cordillera;Piribebuy;1;2;4;DD
+48;Cordillera;Primero de Marzo;1;1;1;DD
+49;Cordillera;San Bernardino;1;1;2;DD
+50;Cordillera;Santa Elena;1;1;1;DD
+51;Cordillera;Tobati;1;2;3;DD
+52;Cordillera;Valenzuela;1;1;1;DD
+53;Cordillera;San Jose Obrero;1;1;1;DD
+54;Guaira;;2;7;20;D
+55;Guaira;Villarica;2;5;16;DD
+56;Guaira;Borja;1;1;1;DD
+57;Guaira;MAURICIO JOSE TROCHE;1;1;1;DD
+58;Guaira;Cnel. Martinez;1;1;1;DD
+59;Guaira;Felix Perez Cardozo;1;1;1;DD
+60;Guaira;Gral. Eugenio A. Garay;1;1;1;DD
+61;Guaira;INDEPENDENCIA;1;1;1;DD
+62;Guaira;Itape;1;1;1;DD
+63;Guaira;Iturbe;0;0;1;DD
+64;Guaira;Jose Fassardi;1;1;1;DD
+65;Guaira;Mbocayaty;1;1;2;DD
+66;Guaira;Natalicio Talavera;1;1;1;DD
+67;Guaira;Ñumi;0;0;0;DD
+68;Guaira;San Salvador;0;0;0;DD
+69;Guaira;Yataity;1;1;1;DD
+70;Guaira;DOCTOR BOTTRELL;0;0;0;DD
+71;Guaira;Paso Yobai;1;1;1;DD
+72;Guaira;Tebicuary;1;1;2;DD
+73;Caaguazu;;2;6;26;D
+74;Caaguazu;CORONEL OVIEDO;3;7;16;DD
+75;Caaguazu;Caaguazu;1;5;13;DD
+76;Caaguazu;Carayao;1;1;2;DD
+77;Caaguazu;CECILIO BAEZ;1;2;3;DD
+78;Caaguazu;SANTA ROSA DEL MBUTUY;1;1;3;DD
+79;Caaguazu;DR. JUAN MANUEL FRUTOS;1;1;1;DD
+80;Caaguazu;Repatriacion;2;3;4;DD
+81;Caaguazu;Nueva Londres;1;1;1;DD
+82;Caaguazu;SAN JOAQUIN;1;2;2;DD
+83;Caaguazu;SAN JOSE DE LOS ARROYOS;1;2;2;DD
+84;Caaguazu;Yhu;1;1;1;DD
+85;Caaguazu;J EULOGIO ESTIGARRIBIA;1;1;3;DD
+86;Caaguazu;R.I. 3 Corrales;0;0;0;DD
+87;Caaguazu;RAUL ARSENIO OVIEDO;1;1;1;DD
+88;Caaguazu;JOSE DOMINGO OCAMPOS;2;2;2;DD
+89;Caaguazu;MCAL. FRANCISCO SOLANO LOPEZ;0;1;1;DD
+90;Caaguazu;La Pastora;1;1;1;DD
+91;Caaguazu;3 de Febrero;1;1;1;DD
+92;Caaguazu;Simon Bolivar;1;1;1;DD
+93;Caaguazu;Vaqueria;1;1;1;DD
+94;Caaguazu;Tembiapora;0;0;0;DD
+95;Caaguazu;NUEVA TOLEDO;;;;F
+96;Caazapa;;1;2;2;D
+97;Caazapa;Caazapa;1;1;1;DD
+98;Caazapa;Abai;1;1;1;DD
+99;Caazapa;Buena Vista;1;1;1;DD
+100;Caazapa;DR. MOISES BERTONI;1;1;1;DD
+101;Caazapa;Gral. Higi Morinigo;0;0;0;DD
+102;Caazapa;Maciel;0;0;0;DD
+103;Caazapa;SAN JUAN NEPOMUCENO;1;1;1;DD
+104;Caazapa;Tavai;1;1;1;DD
+105;Caazapa;FULGENCIO YEGROS;0;0;0;DD
+106;Caazapa;Yuty;1;1;1;DD
+107;Caazapa;3 DE MAYO;0;0;0;F
+108;Itapua;;2;3;8;D
+109;Itapua;Encarnacion;2;2;3;DD
+110;Itapua;Bella Vista;2;1;2;DD
+111;Itapua;Cambyreta;2;1;2;DD
+112;Itapua;Capitan Meza;1;1;1;DD
+113;Itapua;Capitan Miranda;1;1;1;DD
+114;Itapua;Nueva Alborada;1;1;1;DD
+115;Itapua;CARMEN DEL PARANA;0;0;0;DD
+116;Itapua;Coronel Bogado;1;1;1;DD
+117;Itapua;CARLOS ANTONIO LOPEZ;1;1;1;DD
+118;Itapua;Natalio;2;1;1;DD
+119;Itapua;Fram;2;1;1;DD
+120;Itapua;GENERAL ARTIGAS;1;1;1;DD
+121;Itapua;GENERAL DELGADO;0;0;0;DD
+122;Itapua;Hohenau;1;1;1;DD
+123;Itapua;Jesus;1;1;1;DD
+124;Itapua;Leandro Oviedo;0;0;0;DD
+125;Itapua;Obligado;2;1;1;DD
+126;Itapua;Mayor Otaño;1;1;2;DD
+127;Itapua;SAN COSME Y DAMIAN;1;1;1;DD
+128;Itapua;SAN PEDRO DEL PARANA;1;1;1;DD
+129;Itapua;SAN RAFAEL DEL PARANA;0;0;0;DD
+130;Itapua;Trinidad;0;1;1;DD
+131;Itapua;Edelira;1;1;1;DD
+132;Itapua;TOMAS ROMERO PEREIRA;1;1;1;DD
+133;Itapua;Alto Vera;0;0;0;DD
+134;Itapua;La Paz;0;0;0;DD
+135;Itapua;Yatytay;0;0;0;DD
+136;Itapua;SAN JUAN DEL PARANA;0;0;0;DD
+137;Itapua;Pirapo;2;1;1;DD
+138;Itapua;Itapua Poty;0;0;0;DD
+139;Misiones;;1;2;3;D
+140;Misiones;San Juan Bautista ;1;1;2;DD
+141;Misiones;Ayolas ;1;1;2;DD
+142;Misiones;San Ignacio ;1;1;2;DD
+143;Misiones;San Miguel ;1;1;1;DD
+144;Misiones;San Patricio ;1;1;1;DD
+145;Misiones;Santa Maria ;1;1;1;DD
+146;Misiones;Santa Rosa ;1;1;1;DD
+147;Misiones;Santiago ;1;1;1;DD
+148;Misiones;Villa Florida ;1;1;1;DD
+149;Misiones;Yabebyry ;0;0;0;DD
+150;Paraguari;;2;9;24;D
+151;Paraguari;Paraguari ;2;4;8;DD
+152;Paraguari;Acahay ;1;1;2;DD
+153;Paraguari;Caapucu ;1;1;2;DD
+154;Paraguari;GENERAL BERNARDINO CABALLERO;1;1;1;DD
+155;Paraguari;Carapegua ;1;2;4;DD
+156;Paraguari;Escobar ;1;1;1;DD
+157;Paraguari;La Colmena ;1;1;1;DD
+158;Paraguari;Mbuyapey ;1;1;1;DD
+159;Paraguari;Pirayu ;1;3;5;DD
+160;Paraguari;Quiindy ;1;2;3;DD
+161;Paraguari;Quyquyho ;1;1;1;DD
+162;Paraguari;SAN ROQUE GONZALEZ;1;1;2;DD
+163;Paraguari;Sapucai ;1;1;1;DD
+164;Paraguari;TEBICUARY-MI;0;0;0;DD
+165;Paraguari;Yaguaron ;1;2;5;DD
+166;Paraguari;Ybycui ;1;3;4;DD
+167;Paraguari;Ybytimi ;1;1;1;DD
+168;Alto parana;;9;46;138;D
+169;Alto parana;Ciudad del Este ;13;45;118;DD
+170;Alto parana;PRESIDENTE FRANCO;3;10;24;DD
+171;Alto parana;DOMINGO MARTINEZ DE IRALA;1;1;1;DD
+172;Alto parana;Dr. Juan Leòn Mallorquin;1;1;1;DD
+173;Alto parana;Hernandarias ;2;4;14;DD
+174;Alto parana;Ytakyry ;1;1;1;DD
+175;Alto parana;JUAN E. O'LEARY;1;1;1;DD
+176;Alto parana;Ñacunday ;0;1;1;DD
+177;Alto parana;Yguazù ;1;1;1;DD
+178;Alto parana;Los Cedrales ;1;1;2;DD
+179;Alto parana;Minga Guazù ;1;3;5;DD
+180;Alto parana;San Cristobal ;0;0;0;DD
+181;Alto parana;Santa Rita ;1;1;1;DD
+182;Alto parana;Naranjal ;1;1;1;DD
+183;Alto parana;SANTA ROSA DEL MONDAY;1;1;1;DD
+184;Alto parana;Minga Pora ;1;1;1;DD
+185;Alto parana;Mbaracayù ;1;1;1;DD
+186;Alto parana;San Alberto ;1;1;2;DD
+187;Alto parana;Iruña;0;0;0;DD
+188;Alto parana;Santa Fe del Parana ;0;0;0;DD
+189;Alto parana;TAVAPY;0;0;0;F
+190;Ñeembucu;;1;2;4;D
+191;Ñeembucu;Pilar ;1;2;3;DD
+192;Ñeembucu;Alberdi ;1;1;2;DD
+193;Ñeembucu;Cerrito ;0;0;0;DD
+194;Ñeembucu;Desmochados ;0;0;0;DD
+195;Ñeembucu;GENERAL DIAZ;0;0;0;DD
+196;Ñeembucu;Guazu Cua ;0;0;0;DD
+197;Ñeembucu;Humaita ;1;1;1;DD
+198;Ñeembucu;Isla Umbu ;1;1;1;DD
+199;Ñeembucu;Laureles ;0;0;0;DD
+200;Ñeembucu;Mayor Martinez ;0;0;0;DD
+201;Ñeembucu;Paso de Patria ;0;0;0;DD
+202;Ñeembucu;SAN JUAN BAUTISTA DEL ÑEEMBUCU;0;0;0;DD
+203;Ñeembucu;Tacuaras ;0;0;0;DD
+204;Ñeembucu;Villa Franca ;0;0;0;DD
+205;Ñeembucu;Villa Oliva ;1;1;1;DD
+206;Ñeembucu;Villalbin ;0;0;0;DD
+207;Amambay;;3;10;49;D
+208;Amambay;PEDRO JUAN CABALLERO;2;8;44;DD
+209;Amambay;Bella Vista ;2;2;8;DD
+210;Amambay;Capitan Bado ;1;2;2;DD
+211;Amambay;ZANJA PYTA;0;0;0;DD
+212;Canindeyu;;2;5;12;D
+213;Canindeyu;SALTOS DEL GUAIRA;2;3;6;DD
+214;Canindeyu;Corpus Christi ;1;1;1;DD
+215;Canindeyu;Curuguaty ;1;3;8;DD
+216;Canindeyu;VILLA YGATIMI;1;1;3;DD
+217;Canindeyu;Itanara ;1;1;1;DD
+218;Canindeyu;YPE JHU;1;1;1;DD
+219;Canindeyu;FRANCISCO CABALLERO ALVAREZ;1;1;2;DD
+220;Canindeyu;Katuete ;1;2;2;DD
+221;Canindeyu;La Paloma ;1;2;3;DD
+222;Canindeyu;Nueva Esperanza ;1;2;2;DD
+223;Canindeyu;Yasy Kañy ;1;1;1;DD
+224;Canindeyu;YBYRAROBANA;0;0;0;F
+225;Presidente hayes;;1;4;24;D
+226;Presidente hayes;Benjamin Aceval ;1;2;5;DD
+227;Presidente hayes;PINASCO;1;2;3;DD
+228;Presidente hayes;Villa Hayes ;1;5;24;DD
+229;Presidente hayes;Nanawa ;1;1;2;DD
+230;Presidente hayes;Jose Falcon ;1;1;1;DD
+231;Presidente hayes;TTE 1RO MANUEL IRALA FERNANDEZ;1;1;2;DD
+232;Presidente hayes;TTE. ESTEBAN MARTINEZ;0;0;0;DD
+233;Presidente hayes;GRAL JOSE MARIA BRUGUEZ;0;0;0;DD
+234;Boqueron;;1;4;7;DD
+235;Boqueron;Mcal. Estigarribia ;1;2;3;DD
+236;Boqueron;Filadelfia ;1;2;4;DD
+237;Boqueron;Loma Plata ;1;1;1;DD
+238;Alto paraguay;;1;2;2;DD
+239;Alto paraguay;Fuerte Olimpo ;1;1;1;DD
+240;Alto paraguay;La Victoria ;1;2;2;NN
+241;Alto paraguay;Bahia Negra ;0;0;0;DD
+242;Alto paraguay;Carmelo Peralta ;0;0;0;DD
+243;Alto paraguay;Mayor Pablo Lagerenza;0;0;0;NN
+244;Alto paraguay;PUERTO CASADO;0;0;0;F
+245;Central;;30;73;464;D
+246;Central;GUARAMBARE;2;5;16;DD
+247;Central;ITA;2;7;21;DD
+248;Central;LAMBARE;7;20;104;DD
+249;Central;NUEVA ITALIA;1;2;4;DD
+250;Central;ÑEMBY;7;18;96;DD
+251;Central;SAN ANTONIO;4;9;31;DD
+252;Central;VILLA ELISA;3;11;65;DD
+253;Central;VILLETA;2;5;9;DD
+254;Central;YPANE;3;7;30;DD
+255;Central;CAPIATA;10;22;141;DD
+256;Central;FERNANDO DE LA MORA;8;18;105;DD
+257;Central;ITAUGUA;3;8;32;DD
+258;Central;J A SALDIVAR;2;5;24;DD
+259;Central;SAN LORENZO;12;28;154;DD
+260;Central;YPACARAI;2;5;16;DD
+261;Central;AREGUA;3;8;44;DD
+262;Central;LIMPIO;3;12;42;DD
+263;Central;LUQUE;6;21;131;DD
+264;Central;MARIANO ROQUE ALONSO;4;15;67;DD
