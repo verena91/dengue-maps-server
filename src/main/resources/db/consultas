@@ -23,3 +23,18 @@ full join cuartiles c
 on (n.departamento=c.departamento)
 
 update cuartiles_por_distrito set departamento = upper(departamento);
+
+
+with notif (departamento,distrito, semana, cantidad) as
+(select noti.departamento, noti.distrito, CAST(coalesce(noti.semana, '0') AS integer) as semana, count(*) as cantidad from notificacion noti where anio='{0}' 
+	and semana not like '999' group by departamento, distrito, semana order by CAST(coalesce(noti.semana, '0') AS integer), departamento, distrito),
+cuartiles (departamento,distrito, cuartil_uno, cuartil_dos, cuartil_tres) as
+(select departamento, distrito, CAST(coalesce(cuartil_uno, '0') AS integer), CAST(coalesce(cuartil_dos, '0') AS integer), CAST(coalesce(cuartil_tres, '0') AS integer) from cuartiles_por_distrito where tipo='DD')
+select n.departamento,n.distrito, n.semana, n.cantidad,
+(CASE WHEN n.cantidad <= c.cuartil_uno THEN 'RB' 
+	WHEN n.cantidad <= c.cuartil_dos THEN 'RM'
+	WHEN n.cantidad <= c.cuartil_tres THEN 'RA'
+	ELSE 'E' END ) as riesgo
+from notif n
+full join cuartiles c
+on (n.distrito=c.distrito and n.departamento=c.departamento)

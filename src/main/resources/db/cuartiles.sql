@@ -7,7 +7,7 @@ create table cuartiles_por_distrito (
 	cuartil_dos character varying,
 	cuartil_tres character varying,
 	tipo character varying
-)
+);
 
 COPY cuartiles_por_distrito (id, departamento, distrito, cuartil_uno, cuartil_dos, cuartil_tres, tipo) 
 FROM '/home/verena/dengue-maps-server/src/main/resources/db/cuartiles_por_distrito.csv' 
@@ -27,7 +27,7 @@ create table cuartiles_por_barrio (
 	cuartil_uno character varying,
 	cuartil_dos character varying,
 	cuartil_tres character varying
-)
+);
 
 COPY cuartiles_por_barrio (id, barrio, area, cuartil_uno, cuartil_dos, cuartil_tres) 
 FROM '/home/verena/dengue-maps-server/src/main/resources/db/cuartiles_por_barrio.csv' 

@@ -90,4 +90,32 @@ public class NotificacionRS implements NotificacionAPI {
 		}
 		return Response.ok(list).build();
 	}
+	
+	public Response getJsonRiesgosPorAnio(String anio){
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		try {
+			list = n.executeNativeQueryFromFileParameters(queryConfig.getRoot()
+					+ queryConfig.getRiesgosPorAnio(), anio);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return Response.ok(list).build();
+	}
+
+	@Override
+	public Response getJsonRiesgosDistritoPorAnio(String anio) {
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		try {
+			list = n.executeNativeQueryFromFileParameters(queryConfig.getRoot()
+					+ queryConfig.getRiesgosDistritosPorAnio(), anio);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return Response.ok(list).build();
+	}
+
 }

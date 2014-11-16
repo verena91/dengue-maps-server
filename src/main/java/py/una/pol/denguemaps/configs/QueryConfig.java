@@ -9,6 +9,10 @@ public class QueryConfig {
 	private String permisoQuery;
 	
 	private String notificacionesPorAnioQuery;
+	
+	private String riesgosPorAnio;
+	
+	private String riesgosDistritosPorAnio;
 
 	public String getPermisoQuery() {
 		return permisoQuery;
@@ -21,4 +25,13 @@ public class QueryConfig {
 	public String getNotificacionesPorAnioQuery() {
 		return notificacionesPorAnioQuery;
 	}
+
+	public String getRiesgosPorAnio() {
+		return riesgosPorAnio;
+	}
+
+	public String getRiesgosDistritosPorAnio() {
+		return riesgosDistritosPorAnio;
+	}
+	
 }

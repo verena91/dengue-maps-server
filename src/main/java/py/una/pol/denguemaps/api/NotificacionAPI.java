@@ -54,5 +54,16 @@ public interface NotificacionAPI {
 	@Path("/{anio}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getJsonNotificacionesPorAnio(@PathParam("anio") String anio);
+	
+	@GET
+	@Path("/riesgo/{anio}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getJsonRiesgosPorAnio(@PathParam("anio") String anio);
+	
+	@GET
+	@Path("/riesgo/distrito/{anio}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getJsonRiesgosDistritoPorAnio(@PathParam("anio") String anio);
+
 
 }
