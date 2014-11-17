@@ -1,28 +1,47 @@
 package py.una.pol.denguemaps.util;
 
-
 import java.util.List;
-
 
 public class PagedList<T> {
 
-	private List<T> list;
+	private List<T> data;
 
-	private long total;
+	private long recordsTotal;
 
-	public List<T> getList() {
-		return list;
+	private long draw;
+
+	private long recordsFiltered;
+
+	public List<T> getData() {
+		return data;
 	}
 
-	public void setList(List<T> list) {
-		this.list = list;
+	public void setData(List<T> data) {
+		this.data = data;
 	}
 
-	public long getTotal() {
-		return total;
+	public long getRecordsTotal() {
+		return recordsTotal;
 	}
 
-	public void setTotal(long total) {
-		this.total = total;
+	public void setRecordsTotal(long recordsTotal) {
+		this.recordsTotal = recordsTotal;
 	}
+
+	public long getDraw() {
+		return draw;
+	}
+
+	public void setDraw(long draw) {
+		this.draw = draw;
+	}
+
+	public long getRecordsFiltered() {
+		return recordsFiltered;
+	}
+
+	public void setRecordsFiltered(long recordsFiltered) {
+		this.recordsFiltered = recordsFiltered;
+	}
+
 }

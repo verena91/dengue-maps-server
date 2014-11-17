@@ -43,8 +43,32 @@ public class NotificacionRS implements NotificacionAPI {
 			String sortOrder, Notificacion notificacion) {
 		System.out.println("+++++++++++++++++ Entro al servicio de notificaciones paginadas");
 		List<Notificacion> finalList = new ArrayList<Notificacion>();
-		PagedList<Notificacion> lista = new PagedList<Notificacion>();
-
+		//PagedList<Notificacion> lista = new PagedList<Notificacion>();
+		PagedList<String[]> lista = new PagedList<String[]>();
+		
+		System.out.println("+++++++++++++++++ sortField " + sortField);
+		System.out.println("+++++++++++++++++ sortOrder " + sortOrder);
+		
+		if (sortField.compareTo("0") == 0) {
+			sortField = "anio";
+		} else if (sortField.compareTo("1") == 0) {
+			sortField = "semana";
+		} else if (sortField.compareTo("2") == 0) {
+			sortField = "fecha_notificacion";
+		} else if (sortField.compareTo("3") == 0) {
+			sortField = "departamento";
+		} else if (sortField.compareTo("4") == 0) {
+			sortField = "distrito";
+		} else if (sortField.compareTo("5") == 0) {
+			sortField = "sexo";
+		} else if (sortField.compareTo("6") == 0) {
+			sortField = "edad";
+		} else if (sortField.compareTo("7") == 0) {
+			sortField = "clasificacion_final";
+		} else {
+			sortField = "id";
+		}
+		
 		Pagination pag = null;
 
 		// paginar o no
@@ -62,13 +86,36 @@ public class NotificacionRS implements NotificacionAPI {
 			}
 		}
 		finalList = notificacionBC.findAll(sortField, asc, notificacion, pag);
-		lista.setList(finalList);
-		if (pag != null) {
-			lista.setTotal(pag.getTotalResults());
-		} else {
-			lista.setTotal(finalList.size());
+		
+		List<String[]> list = new ArrayList<String[]>();
+		for (Notificacion not : finalList) {
+			String[] row = new String[8];
+			//row[0] = not.getId() + "";
+			row[0] = not.getAnio();
+			row[1] = not.getSemana();
+			//row[3] = not.getInstitucion_notificacion();
+			row[2] = not.getFecha_notificacion();
+			row[3] = not.getDepartamento();
+			row[4] = not.getDistrito();
+			row[5] = not.getSexo();
+			row[6] = not.getEdad();
+			row[7] = not.getClasificacion_final();
+			list.add(row);
 		}
-		return Response.ok(finalList).build();
+
+		//lista.setData(finalList);
+		lista.setData(list);
+		
+		if (pag != null) {
+			lista.setRecordsTotal(pag.getTotalResults());
+			lista.setDraw(page);
+			lista.setRecordsFiltered(pag.getTotalResults());
+		} else {
+			lista.setRecordsTotal(finalList.size());
+			lista.setDraw(page);
+			lista.setRecordsFiltered(finalList.size());
+		}
+		return Response.ok(lista).build();
 	}
 
 	@Inject

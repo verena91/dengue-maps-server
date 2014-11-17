@@ -37,10 +37,10 @@ public interface NotificacionAPI {
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getNotificaciones(@QueryParam("page") int page,
-			@QueryParam("limit") int limit,
-			@QueryParam("sortField") String sortField,
-			@QueryParam("sortOrder") String sortOrder,
+	public Response getNotificaciones(@QueryParam("draw") int page,
+			@QueryParam("length") int limit,
+			@QueryParam("order[0][column]") String sortField,
+			@QueryParam("order[0][dir]") String sortOrder,
 			@QueryParam("filtros") Notificacion notificacion);
 
 	/**
