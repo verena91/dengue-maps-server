@@ -1,0 +1,13 @@
+with notif (barrio, departamento, semana, cantidad) as
+(select noti.barrio, noti.departamento, CAST(coalesce(noti.semana, '0') AS integer) as semana, count(*) as cantidad from notificacion noti where anio='{0}' 
+	and semana not like '999' and noti.departamento = 'ASUNCION' group by barrio,departamento, semana order by CAST(coalesce(noti.semana, '0') AS integer), barrio),
+cuartiles (barrio, area, cuartil_uno, cuartil_dos, cuartil_tres) as
+(select barrio, area, CAST(coalesce(cuartil_uno, '0') AS integer), CAST(coalesce(cuartil_dos, '0') AS integer), CAST(coalesce(cuartil_tres, '0') AS integer) from cuartiles_por_barrio)
+select n.departamento || '-' ||n.barrio as barrio, n.semana, n.cantidad,
+(CASE WHEN n.cantidad <= c.cuartil_uno THEN 'RB' 
+	WHEN n.cantidad <= c.cuartil_dos THEN 'RM'
+	WHEN n.cantidad <= c.cuartil_tres THEN 'RA'
+	ELSE 'E' END ) as riesgo
+from notif n
+left join cuartiles c
+on (n.barrio = c.barrio)

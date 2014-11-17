@@ -14,6 +14,8 @@ public class QueryConfig {
 	
 	private String riesgosDistritosPorAnio;
 
+	private String riesgosAsuncionPorAnio;
+	
 	public String getPermisoQuery() {
 		return permisoQuery;
 	}
@@ -32,6 +34,10 @@ public class QueryConfig {
 
 	public String getRiesgosDistritosPorAnio() {
 		return riesgosDistritosPorAnio;
+	}
+	
+	public String getRiesgosAsuncionPorAnio() {
+		return riesgosAsuncionPorAnio;
 	}
 	
 }
