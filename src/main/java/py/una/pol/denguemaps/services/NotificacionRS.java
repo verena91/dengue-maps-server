@@ -253,6 +253,21 @@ public class NotificacionRS implements NotificacionAPI {
 
 		return Response.ok(list).build();
 	}
+
+	@Override
+	public Response getJsonNotificacionesPorFiltros(String anio, String sexo,
+			String resultado) {
+		String query = "select count(*), semana, anio, from notificacion where anio = '"+anio+"'";
+		if(sexo!=null){
+			query = query + "and sexo = "+sexo;
+		}
+		if(resultado!=null){
+			
+		}
+			
+		query = query +  "group by semana";
+		return null;
+	}
 	
 
 }

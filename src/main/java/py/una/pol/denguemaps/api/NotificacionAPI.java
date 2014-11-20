@@ -95,4 +95,10 @@ public interface NotificacionAPI {
 			@QueryParam("edad") String edad,
 			@QueryParam("resultado") String resultado);
 
+	@GET
+	@Path("/filtrosmapa")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getJsonNotificacionesPorFiltros(@QueryParam("anio") String anio,
+			@QueryParam("sexo") String sexo,
+			@QueryParam("clasificacion") String resultado);
 }
