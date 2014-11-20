@@ -82,4 +82,16 @@ public class NotificacionBC extends
 		}
 	}
 
+	public List<Notificacion> getNotificacionesPorAnio(String anio) {
+		return notificacionDAO.getNotificacionesPorAnio(anio);
+	}
+
+	public List<Notificacion> getNotificacionesFiltradas(String anio,
+			String semana, String fechaNotificacion, String departamento,
+			String distrito, String sexo, String edad, String resultado) {
+		return notificacionDAO.getNotificacionesFiltradas(anio, semana,
+				fechaNotificacion, departamento, distrito, sexo, edad,
+				resultado);
+	}
+
 }

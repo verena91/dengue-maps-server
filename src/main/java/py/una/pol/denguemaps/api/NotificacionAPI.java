@@ -37,10 +37,18 @@ public interface NotificacionAPI {
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getNotificaciones(@QueryParam("draw") int page,
-			@QueryParam("length") int limit,
-			@QueryParam("order[0][column]") String sortField,
-			@QueryParam("order[0][dir]") String sortOrder,
+	public Response getNotificaciones(@QueryParam("sEcho") int page,
+			@QueryParam("sSearch_0") String anio,
+			@QueryParam("sSearch_1") String semana,
+			@QueryParam("sSearch_2") String fechaNotificacion,
+			@QueryParam("sSearch_3") String departamento,
+			@QueryParam("sSearch_4") String distrito,
+			@QueryParam("sSearch_5") String sexo,
+			@QueryParam("sSearch_6") String edad,
+			@QueryParam("sSearch_7") String resultado,
+			@QueryParam("iDisplayLength") int limit,
+			@QueryParam("iSortCol_0") String sortField,
+			@QueryParam("sSortDir_0") String sortOrder,
 			@QueryParam("filtros") Notificacion notificacion);
 
 	/**
@@ -54,21 +62,37 @@ public interface NotificacionAPI {
 	@Path("/{anio}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getJsonNotificacionesPorAnio(@PathParam("anio") String anio);
-	
+
 	@GET
 	@Path("/riesgo/{anio}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getJsonRiesgosPorAnio(@PathParam("anio") String anio);
-	
+
 	@GET
 	@Path("/riesgo/distrito/{anio}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getJsonRiesgosDistritoPorAnio(@PathParam("anio") String anio);
-	
+
 	@GET
 	@Path("/riesgo/asuncion/{anio}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getJsonRiesgosAsuncionPorAnio(@PathParam("anio") String anio);
 
+	@GET
+	@Path("/filtro")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getNotificacionesPorAnio(@QueryParam("anio") String anio);
+
+	@GET
+	@Path("/filtros")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getNotificacionesFiltradas(@QueryParam("anio") String anio,
+			@QueryParam("semana") String semana,
+			@QueryParam("fechaNotificacion") String fechaNotificacion,
+			@QueryParam("departamento") String departamento,
+			@QueryParam("distrito") String distrito,
+			@QueryParam("sexo") String sexo, 
+			@QueryParam("edad") String edad,
+			@QueryParam("resultado") String resultado);
 
 }

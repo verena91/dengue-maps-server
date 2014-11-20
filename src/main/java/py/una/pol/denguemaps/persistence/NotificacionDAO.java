@@ -44,6 +44,14 @@
 
 package py.una.pol.denguemaps.persistence;
 
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
+import javax.ws.rs.QueryParam;
+
 import org.ticpy.tekoporu.stereotype.PersistenceController;
 
 import py.una.pol.denguemaps.domain.Notificacion;
@@ -53,5 +61,99 @@ import py.una.pol.denguemaps.util.JPACrud;
 public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 
 	private static final long serialVersionUID = 1L;
+
+	@Inject
+	private EntityManager em;
+
+	public List<Notificacion> getNotificacionesPorAnio(String anio) {
+
+		Query q = em.createQuery("select n from Notificacion n where n.anio='"
+				+ anio + "'");
+		try {
+			List<Notificacion> listaevento = (List<Notificacion>) q
+					.getResultList();
+			return listaevento;
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
+
+	public List<Notificacion> getNotificacionesFiltradas(String anio,
+			String semana, String fechaNotificacion, String departamento,
+			String distrito, String sexo, String edad, String resultado) {
+
+		String wheres = "";
+
+		if (anio != null) {
+			wheres = wheres + " n.anio='" + anio + "'";
+		}
+		if (semana != null) {
+			if (wheres.compareTo("") != 0) {
+				wheres = wheres + " and " + " n.semana='" + semana + "'";
+			} else {
+				wheres = wheres + " n.semana='" + semana + "'";
+			}
+		}
+		if (fechaNotificacion != null) {
+			if (wheres.compareTo("") != 0) {
+				wheres = wheres + " and " + " n.fecha_notificacion='"
+						+ fechaNotificacion + "'";
+			} else {
+				wheres = wheres + " n.fecha_notificacion='" + fechaNotificacion
+						+ "'";
+			}
+		}
+		if (departamento != null) {
+			if (wheres.compareTo("") != 0) {
+				wheres = wheres + " and " + " n.departamento='" + departamento
+						+ "'";
+			} else {
+				wheres = wheres + " n.departamento='" + departamento + "'";
+			}
+		}
+		if (distrito != null) {
+			if (wheres.compareTo("") != 0) {
+				wheres = wheres + " and " + " n.distrito='" + distrito + "'";
+			} else {
+				wheres = wheres + " n.distrito='" + distrito + "'";
+			}
+		}
+		if (sexo != null) {
+			if (wheres.compareTo("") != 0) {
+				wheres = wheres + " and " + " n.sexo='" + sexo + "'";
+			} else {
+				wheres = wheres + " n.sexo='" + sexo + "'";
+			}
+		}
+
+		if (edad != null) {
+			if (wheres.compareTo("") != 0) {
+				wheres = wheres + " and " + " n.edad='" + edad + "'";
+			} else {
+				wheres = wheres + " n.edad='" + edad + "'";
+			}
+		}
+
+		if (resultado != null) {
+			if (wheres.compareTo("") != 0) {
+				wheres = wheres + " and " + " n.clasificacon_clinica='"
+						+ resultado + "'";
+			} else {
+				wheres = wheres + " n.clasificacon_clinica='" + resultado + "'";
+			}
+		}
+		String query = "select n from Notificacion n";
+		if (wheres.compareTo("") != 0) {
+			query = query + " where " + wheres;
+		}
+		Query q = em.createQuery(query);
+		try {
+			List<Notificacion> listaevento = (List<Notificacion>) q
+					.getResultList();
+			return listaevento;
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
 
 }
