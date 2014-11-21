@@ -11,6 +11,8 @@ public class PagedList<T> {
 	private long draw;
 
 	private long recordsFiltered;
+	
+	private int identificador;
 
 	public List<T> getData() {
 		return data;
@@ -42,6 +44,14 @@ public class PagedList<T> {
 
 	public void setRecordsFiltered(long recordsFiltered) {
 		this.recordsFiltered = recordsFiltered;
+	}
+
+	public int getIdentificador() {
+		return identificador;
+	}
+
+	public void setIdentificador(int identificador) {
+		this.identificador = identificador;
 	}
 
 }

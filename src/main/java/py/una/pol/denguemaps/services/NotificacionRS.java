@@ -20,8 +20,8 @@ import py.una.pol.denguemaps.util.NativeQueryFileManager;
 import py.una.pol.denguemaps.util.PagedList;
 
 /**
- * Servicio REST para las operaciones sobre Bookmarks, implementa la interfaz
- * BookmarkAPI
+ * Servicio REST para las operaciones sobre Notificaciones, implementa la interfaz
+ * NotificacionAPI
  * 
  * @author desa2
  * 
@@ -39,10 +39,11 @@ public class NotificacionRS implements NotificacionAPI {
 	/** Métodos de la API **/
 
 	@Override
-	public Response getNotificaciones(int page, String anio, String semana,
+	public Response getNotificaciones(int identificador, int start, String anio, String semana,
 			String fechaNotificacion, String departamento, String distrito,
 			String sexo, String edad, String resultado, int limit,
 			String sortField, String sortOrder, Notificacion notificacion) {
+		int page = (start/limit) + 1;
 		System.out
 				.println("+++++++++++++++++ Servicio de notificaciones paginadas");
 		List<Notificacion> finalList = new ArrayList<Notificacion>();
@@ -66,7 +67,7 @@ public class NotificacionRS implements NotificacionAPI {
 		} else if (sortField.compareTo("6") == 0) {
 			sortField = "edad";
 		} else if (sortField.compareTo("7") == 0) {
-			sortField = "clasificacion_clinica";
+			sortField = "clasificacon_clinica";
 		} else {
 			sortField = "id";
 		}
@@ -145,12 +146,14 @@ public class NotificacionRS implements NotificacionAPI {
 
 		if (pag != null) {
 			lista.setRecordsTotal(pag.getTotalResults());
-			lista.setDraw(page);
+			//lista.setDraw(page);
 			lista.setRecordsFiltered(pag.getTotalResults());
+			lista.setIdentificador(identificador);
 		} else {
 			lista.setRecordsTotal(finalList.size());
-			lista.setDraw(page);
+			//lista.setDraw(page);
 			lista.setRecordsFiltered(finalList.size());
+			lista.setIdentificador(identificador);
 		}
 		return Response.ok(lista).build();
 	}

@@ -39,7 +39,8 @@ public interface NotificacionAPI {
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getNotificaciones(@QueryParam("sEcho") int page,
+	public Response getNotificaciones(@QueryParam("sEcho") int identificador,
+			@QueryParam("iDisplayStart") int start,
 			@QueryParam("sSearch_0") String anio,
 			@QueryParam("sSearch_1") String semana,
 			@QueryParam("sSearch_2") String fechaNotificacion,
