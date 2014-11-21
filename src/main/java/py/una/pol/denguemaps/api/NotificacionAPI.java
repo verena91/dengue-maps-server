@@ -125,7 +125,7 @@ public interface NotificacionAPI {
 	@GET
 	@Path("/filtrosmapa")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getJsonNotificacionesPorFiltros(
-			@QueryParam("anio") String anio, @QueryParam("sexo") String sexo,
-			@QueryParam("clasificacion") String resultado);
+	public Response getJsonNotificacionesPorFiltros(@QueryParam("anio") String anio,
+			@QueryParam("f") int f, @QueryParam("m") int m, @QueryParam("confirmado") int confirmado,
+			@QueryParam("descartado") int descartado, @QueryParam("sospechoso")int sospechoso);
 }
