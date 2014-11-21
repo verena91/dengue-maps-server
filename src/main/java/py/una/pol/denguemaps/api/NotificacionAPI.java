@@ -20,18 +20,20 @@ import py.una.pol.denguemaps.domain.Notificacion;
 public interface NotificacionAPI {
 
 	/**
-	 * Obtiene una lista de notificaciones paginada, ordenada y filtrada
 	 * 
 	 * @param page
-	 *            Página
+	 * @param anio
+	 * @param semana
+	 * @param fechaNotificacion
+	 * @param departamento
+	 * @param distrito
+	 * @param sexo
+	 * @param edad
+	 * @param resultado
 	 * @param limit
-	 *            Cantidad por página
 	 * @param sortField
-	 *            Campo de ordenamiento
 	 * @param sortOrder
-	 *            Tipo de ordenamiento (ASCENDING, DESCENDING)
 	 * @param notificacion
-	 *            Notificacion con datos de filtrado
 	 * @return
 	 */
 	@GET
@@ -63,26 +65,51 @@ public interface NotificacionAPI {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getJsonNotificacionesPorAnio(@PathParam("anio") String anio);
 
+	/**
+	 * Retorna un json con los riesgos por departamento por año.
+	 * 
+	 * @param anio
+	 * @return json
+	 */
 	@GET
 	@Path("/riesgo/{anio}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getJsonRiesgosPorAnio(@PathParam("anio") String anio);
 
+	/**
+	 * Retorna un json con los riesgos por distrito por año.
+	 * 
+	 * @param anio
+	 * @return json
+	 */
 	@GET
 	@Path("/riesgo/distrito/{anio}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getJsonRiesgosDistritoPorAnio(@PathParam("anio") String anio);
 
+	/**
+	 * Retorna un json con los riesgos por barrios de Asunción por año.
+	 * 
+	 * @param anio
+	 * @return json
+	 */
 	@GET
 	@Path("/riesgo/asuncion/{anio}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getJsonRiesgosAsuncionPorAnio(@PathParam("anio") String anio);
 
-	@GET
-	@Path("/filtro")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getNotificacionesPorAnio(@QueryParam("anio") String anio);
-
+	/**
+	 * 
+	 * @param anio
+	 * @param semana
+	 * @param fechaNotificacion
+	 * @param departamento
+	 * @param distrito
+	 * @param sexo
+	 * @param edad
+	 * @param resultado
+	 * @return
+	 */
 	@GET
 	@Path("/filtros")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -91,8 +118,7 @@ public interface NotificacionAPI {
 			@QueryParam("fechaNotificacion") String fechaNotificacion,
 			@QueryParam("departamento") String departamento,
 			@QueryParam("distrito") String distrito,
-			@QueryParam("sexo") String sexo, 
-			@QueryParam("edad") String edad,
+			@QueryParam("sexo") String sexo, @QueryParam("edad") String edad,
 			@QueryParam("resultado") String resultado);
 
 	@GET

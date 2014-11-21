@@ -84,17 +84,17 @@ public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 
 		String wheres = "";
 
-		if (anio != null) {
+		if (anio != null && anio.compareTo("") != 0) {
 			wheres = wheres + " n.anio='" + anio + "'";
 		}
-		if (semana != null) {
+		if (semana != null && semana.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
 				wheres = wheres + " and " + " n.semana='" + semana + "'";
 			} else {
 				wheres = wheres + " n.semana='" + semana + "'";
 			}
 		}
-		if (fechaNotificacion != null) {
+		if (fechaNotificacion != null && fechaNotificacion.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
 				wheres = wheres + " and " + " n.fecha_notificacion='"
 						+ fechaNotificacion + "'";
@@ -103,7 +103,7 @@ public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 						+ "'";
 			}
 		}
-		if (departamento != null) {
+		if (departamento != null && departamento.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
 				wheres = wheres + " and " + " n.departamento='" + departamento
 						+ "'";
@@ -111,14 +111,14 @@ public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 				wheres = wheres + " n.departamento='" + departamento + "'";
 			}
 		}
-		if (distrito != null) {
+		if (distrito != null && distrito.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
 				wheres = wheres + " and " + " n.distrito='" + distrito + "'";
 			} else {
 				wheres = wheres + " n.distrito='" + distrito + "'";
 			}
 		}
-		if (sexo != null) {
+		if (sexo != null && sexo.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
 				wheres = wheres + " and " + " n.sexo='" + sexo + "'";
 			} else {
@@ -126,7 +126,7 @@ public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 			}
 		}
 
-		if (edad != null) {
+		if (edad != null && edad.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
 				wheres = wheres + " and " + " n.edad='" + edad + "'";
 			} else {
@@ -134,7 +134,7 @@ public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 			}
 		}
 
-		if (resultado != null) {
+		if (resultado != null && resultado.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
 				wheres = wheres + " and " + " n.clasificacon_clinica='"
 						+ resultado + "'";
@@ -146,6 +146,7 @@ public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 		if (wheres.compareTo("") != 0) {
 			query = query + " where " + wheres;
 		}
+		System.out.println("query " + query);
 		Query q = em.createQuery(query);
 		try {
 			List<Notificacion> listaevento = (List<Notificacion>) q
