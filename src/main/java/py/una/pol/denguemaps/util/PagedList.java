@@ -8,7 +8,7 @@ public class PagedList<T> {
 
 	private long recordsTotal;
 
-	private long draw;
+	//private long draw;
 
 	private long recordsFiltered;
 	
@@ -30,13 +30,13 @@ public class PagedList<T> {
 		this.recordsTotal = recordsTotal;
 	}
 
-	public long getDraw() {
+	/*public long getDraw() {
 		return draw;
 	}
 
 	public void setDraw(long draw) {
 		this.draw = draw;
-	}
+	}*/
 
 	public long getRecordsFiltered() {
 		return recordsFiltered;

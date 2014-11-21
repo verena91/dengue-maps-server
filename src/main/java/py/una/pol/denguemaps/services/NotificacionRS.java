@@ -146,12 +146,10 @@ public class NotificacionRS implements NotificacionAPI {
 
 		if (pag != null) {
 			lista.setRecordsTotal(pag.getTotalResults());
-			//lista.setDraw(page);
 			lista.setRecordsFiltered(pag.getTotalResults());
 			lista.setIdentificador(identificador);
 		} else {
 			lista.setRecordsTotal(finalList.size());
-			//lista.setDraw(page);
 			lista.setRecordsFiltered(finalList.size());
 			lista.setIdentificador(identificador);
 		}
