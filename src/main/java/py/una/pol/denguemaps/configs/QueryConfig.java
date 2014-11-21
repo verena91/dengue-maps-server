@@ -16,6 +16,8 @@ public class QueryConfig {
 
 	private String riesgosAsuncionPorAnio;
 	
+	private String notificacionesFiltrosMapa;
+	
 	public String getPermisoQuery() {
 		return permisoQuery;
 	}
@@ -38,6 +40,10 @@ public class QueryConfig {
 	
 	public String getRiesgosAsuncionPorAnio() {
 		return riesgosAsuncionPorAnio;
+	}
+
+	public String getNotificacionesFiltrosMapa() {
+		return notificacionesFiltrosMapa;
 	}
 	
 }

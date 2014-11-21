@@ -255,18 +255,44 @@ public class NotificacionRS implements NotificacionAPI {
 	}
 
 	@Override
-	public Response getJsonNotificacionesPorFiltros(String anio, String sexo,
-			String resultado) {
-		String query = "select count(*), semana, anio, from notificacion where anio = '"+anio+"'";
-		if(sexo!=null){
-			query = query + "and sexo = "+sexo;
+	public Response getJsonNotificacionesPorFiltros(String anio, int f, int m, int confirmado, int descartado, int sospechoso) {
+		String query = "";
+		if(f == 1){
+			query = query + " and sexo = 'F'";
 		}
-		if(resultado!=null){
-			
+		if(m == 1){
+			query = query + " and sexo = 'M'";
 		}
+		if(confirmado == 1 || descartado == 1 || sospechoso == 1){
+			query = query + " and (";
+			if (confirmado == 1) {
+				query = query + " clasificacon_clinica = 'CONFIRMADO'";
+			}
+			if (descartado == 1) {
+				if(confirmado == 1){
+					query = query + " or ";
+				}
+				query = query + "clasificacon_clinica = 'DESCARTADO'";
+			}
+			if (sospechoso == 1) {
+				if(descartado == 1 || confirmado == 1){
+					query = query + " or ";
+				}
+				query = query + "clasificacon_clinica = 'SOSPECHOSO'";
+			}
+			query = query+ " ) ";
+		}
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		try {
+			list = n.executeNativeQueryFromFileParameters(queryConfig.getRoot()
+					+ queryConfig.getNotificacionesFiltrosMapa(), anio, query);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return Response.ok(list).build();
 			
-		query = query +  "group by semana";
-		return null;
 	}
 	
 

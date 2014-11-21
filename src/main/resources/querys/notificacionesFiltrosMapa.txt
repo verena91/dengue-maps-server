@@ -1,0 +1,1 @@
+select count(*) as cantidad, departamento, semana, anio from notificacion where anio = '{0}' {1} group by anio, semana, departamento order by semana
