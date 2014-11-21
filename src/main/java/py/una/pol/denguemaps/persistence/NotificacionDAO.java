@@ -145,6 +145,8 @@ public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 		String query = "select n from Notificacion n";
 		if (wheres.compareTo("") != 0) {
 			query = query + " where " + wheres;
+		} else {
+			return null;
 		}
 		System.out.println("query " + query);
 		Query q = em.createQuery(query);

@@ -22,7 +22,7 @@ Instalación
 
  `$ git clone https://github.com/verena91/dengue-maps-server.git`
     
-5. Realizar un restore de la base de datos con el archivo **RESTORE-DB.sql**.
+5. Realizar un restore de la base de datos con el archivo RESTORE-DB.sql.
 
 6. Deployar el proyecto en el servidor JBoss.
 
