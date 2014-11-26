@@ -50,7 +50,6 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
-import javax.ws.rs.QueryParam;
 
 import org.ticpy.tekoporu.stereotype.PersistenceController;
 
@@ -89,57 +88,57 @@ public class NotificacionDAO extends JPACrud<Notificacion, Long> {
 		}
 		if (semana != null && semana.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
-				wheres = wheres + " and " + " n.semana='" + semana + "'";
+				wheres = wheres + " and " + " n.semana like '%" + semana + "%'";
 			} else {
-				wheres = wheres + " n.semana='" + semana + "'";
+				wheres = wheres + " n.semana like '%" + semana + "%'";
 			}
 		}
 		if (fechaNotificacion != null && fechaNotificacion.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
-				wheres = wheres + " and " + " n.fecha_notificacion='"
-						+ fechaNotificacion + "'";
+				wheres = wheres + " and " + " n.fecha_notificacion like '%"
+						+ fechaNotificacion + "%'";
 			} else {
-				wheres = wheres + " n.fecha_notificacion='" + fechaNotificacion
-						+ "'";
+				wheres = wheres + " n.fecha_notificacion like '%" + fechaNotificacion
+						+ "%'";
 			}
 		}
 		if (departamento != null && departamento.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
-				wheres = wheres + " and " + " n.departamento='" + departamento
-						+ "'";
+				wheres = wheres + " and " + " n.departamento like '%" + departamento.toUpperCase()
+						+ "%'";
 			} else {
-				wheres = wheres + " n.departamento='" + departamento + "'";
+				wheres = wheres + " n.departamento like '%" + departamento.toUpperCase() + "%'";
 			}
 		}
 		if (distrito != null && distrito.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
-				wheres = wheres + " and " + " n.distrito='" + distrito + "'";
+				wheres = wheres + " and " + " n.distrito like '%" + distrito.toUpperCase() + "%'";
 			} else {
-				wheres = wheres + " n.distrito='" + distrito + "'";
+				wheres = wheres + " n.distrito like '%" + distrito.toUpperCase() + "%'";
 			}
 		}
 		if (sexo != null && sexo.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
-				wheres = wheres + " and " + " n.sexo='" + sexo + "'";
+				wheres = wheres + " and " + " n.sexo like '%" + sexo.toUpperCase() + "%'";
 			} else {
-				wheres = wheres + " n.sexo='" + sexo + "'";
+				wheres = wheres + " n.sexo like '%" + sexo.toUpperCase() + "%'";
 			}
 		}
 
 		if (edad != null && edad.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
-				wheres = wheres + " and " + " n.edad='" + edad + "'";
+				wheres = wheres + " and " + " n.edad like '%" + edad.toUpperCase() + "%'";
 			} else {
-				wheres = wheres + " n.edad='" + edad + "'";
+				wheres = wheres + " n.edad like '%" + edad.toUpperCase() + "%'";
 			}
 		}
 
 		if (resultado != null && resultado.compareTo("") != 0) {
 			if (wheres.compareTo("") != 0) {
-				wheres = wheres + " and " + " n.clasificacon_clinica='"
-						+ resultado + "'";
+				wheres = wheres + " and " + " n.clasificacon_clinica like '%"
+						+ resultado.toUpperCase() + "%'";
 			} else {
-				wheres = wheres + " n.clasificacon_clinica='" + resultado + "'";
+				wheres = wheres + " n.clasificacon_clinica like '%" + resultado.toUpperCase() + "%'";
 			}
 		}
 		String query = "select n from Notificacion n";

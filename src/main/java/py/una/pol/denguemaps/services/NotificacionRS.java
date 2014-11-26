@@ -14,7 +14,7 @@ import org.ticpy.tekoporu.pagination.Pagination;
 
 import py.una.pol.denguemaps.api.NotificacionAPI;
 import py.una.pol.denguemaps.business.NotificacionBC;
-import py.una.pol.denguemaps.configs.QueryConfig;
+import py.una.pol.denguemaps.constant.Statics;
 import py.una.pol.denguemaps.domain.Notificacion;
 import py.una.pol.denguemaps.util.NativeQueryFileManager;
 import py.una.pol.denguemaps.util.PagedList;
@@ -72,13 +72,6 @@ public class NotificacionRS implements NotificacionAPI {
 			sortField = "id";
 		}
 
-		System.out.println("+++" + anio + "+++");
-		System.out.println("+++" + semana + "+++");
-		System.out.println("+++" + departamento + "+++");
-		System.out.println("+++" + distrito + "+++");
-		System.out.println("+++" + resultado + "+++");
-		System.out.println("+++" + sexo + "+++");
-		System.out.println("+++" + edad + "+++");
 
 		Notificacion filtro = new Notificacion();
 
@@ -157,10 +150,7 @@ public class NotificacionRS implements NotificacionAPI {
 	}
 
 	@Inject
-	NativeQueryFileManager n;
-
-	@Inject
-	QueryConfig queryConfig;
+	private NativeQueryFileManager n;
 
 	@Override
 	public Response getJsonNotificacionesPorAnio(String anio) {
@@ -168,8 +158,7 @@ public class NotificacionRS implements NotificacionAPI {
 				.println("+++++++++++++++++ Servicio de notificaciones por año");
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			list = n.executeNativeQueryFromFileParameters(queryConfig.getRoot()
-					+ queryConfig.getNotificacionesPorAnioQuery(), anio);
+			list = n.executeNativeQueryParameters(Statics.NOTIFPORANIO, anio);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -183,8 +172,7 @@ public class NotificacionRS implements NotificacionAPI {
 				.println("+++++++++++++++++ Servicio de riesgos por departamento");
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			list = n.executeNativeQueryFromFileParameters(queryConfig.getRoot()
-					+ queryConfig.getRiesgosPorAnio(), anio);
+			list = n.executeNativeQueryParameters(Statics.RIESGOSPORANIO, anio);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -199,8 +187,7 @@ public class NotificacionRS implements NotificacionAPI {
 				.println("+++++++++++++++++ Servicio de riesgos por distrito");
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			list = n.executeNativeQueryFromFileParameters(queryConfig.getRoot()
-					+ queryConfig.getRiesgosDistritosPorAnio(), anio);
+			list = n.executeNativeQueryParameters(Statics.REISGOSDITRITOS, anio);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -215,8 +202,7 @@ public class NotificacionRS implements NotificacionAPI {
 				.println("+++++++++++++++++ Servicio de riesgos por barrios de Asunción");
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			list = n.executeNativeQueryFromFileParameters(queryConfig.getRoot()
-					+ queryConfig.getRiesgosAsuncionPorAnio(), anio);
+			list = n.executeNativeQueryParameters(Statics.RIESGOSASU, anio);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -268,8 +254,7 @@ public class NotificacionRS implements NotificacionAPI {
 		}
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			list = n.executeNativeQueryFromFileParameters(queryConfig.getRoot()
-					+ queryConfig.getNotificacionesFiltrosMapa(), anio, query);
+			list = n.executeNativeQueryParameters(Statics.NOTIFFILTRADASMAP, anio, query);
 
 		} catch (SQLException e) {
 			e.printStackTrace();

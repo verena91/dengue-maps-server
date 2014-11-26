@@ -6,43 +6,48 @@ package py.una.pol.denguemaps.constant;
  */
 public class Statics {
 
-	/** Extensiones **/
-	public static String html = ".html";
-	public static String xhtml = ".xhtml";
-
-	public static String RECURSO_BOOK = "bookmark";
-	public static String RECURSO_USUARIO = "usuario";
-	public static String RECURSO_ROL = "rol";
-	public static String RECURSO_PERMISO = "permiso";
-
-	public static String OPERACION_LISTAR = ":listar";
-	public static String OPERACION_LEER = ":leer";
-	public static String OPERACION_ELIMINAR = ":eliminar";
-	public static String OPERACION_CREAR = ":crear";
-	public static String OPERACION_MODIFICAR = ":modificar";
-
-	public static String URL_PAGINA_PRINCIPAL = "/index.html";
+	/** QUERYS **/
+	public final static String RIESGOSASU = "with notif (barrio, departamento, semana, cantidad) as "
+			+ " (select noti.barrio, noti.departamento, CAST(coalesce(noti.semana, '0') AS integer) as semana, count(*) as cantidad from notificacion noti where anio='{0}' "
+			+ "	and semana not like '999' and noti.departamento = 'ASUNCION' group by barrio,departamento, semana order by CAST(coalesce(noti.semana, '0') AS integer), barrio), "
+			+ " cuartiles (barrio, area, cuartil_uno, cuartil_dos, cuartil_tres) as"
+			+ " (select barrio, area, CAST(coalesce(cuartil_uno, '0') AS integer), CAST(coalesce(cuartil_dos, '0') AS integer), CAST(coalesce(cuartil_tres, '0') AS integer) from cuartiles_por_barrio)"
+			+ " select n.departamento || '-' ||n.barrio as barrio, n.semana, n.cantidad,"
+			+ " (CASE WHEN n.cantidad <= c.cuartil_uno THEN 'RB' "
+			+ "	WHEN n.cantidad <= c.cuartil_dos THEN 'RM'"
+			+ "	WHEN n.cantidad <= c.cuartil_tres THEN 'RA'"
+			+ "	ELSE 'E' END ) as riesgo "
+			+ " from notif n left join cuartiles c on (n.barrio = c.barrio)";
 	
-	public static String STATUS_403 = "/public/403.html";
-	public static String STATUS_404 = "/public/404.html";
-	public static String STATUS_422 = "/public/422.html";
+	public final static String REISGOSDITRITOS = "with notif (departamento,distrito, semana, cantidad) as"+
+			" (select noti.departamento, noti.distrito, CAST(coalesce(noti.semana, '0') AS integer) as semana, count(*) as cantidad from notificacion noti where anio='{0}' and departamento != 'ASUNCION'"+
+			" and semana not like '999' group by departamento, distrito, semana order by CAST(coalesce(noti.semana, '0') AS integer), departamento, distrito),"+
+			" cuartiles (departamento,distrito, cuartil_uno, cuartil_dos, cuartil_tres) as"+
+			" (select departamento, distrito, CAST(coalesce(cuartil_uno, '0') AS integer), CAST(coalesce(cuartil_dos, '0') AS integer), CAST(coalesce(cuartil_tres, '0') AS integer) from cuartiles_por_distrito where tipo='DD')"+
+			" select n.departamento || '-' ||n.distrito as distrito, n.semana, n.cantidad,"+
+			" (CASE WHEN n.cantidad <= c.cuartil_uno THEN 'RB' "+
+			"	WHEN n.cantidad <= c.cuartil_dos THEN 'RM'"+
+			"	WHEN n.cantidad <= c.cuartil_tres THEN 'RA'"+
+			"	ELSE 'E' END ) as riesgo"+
+			" from notif n"+
+			" left join cuartiles c"+
+			" on (n.distrito = c.distrito and n.departamento = c.departamento)";
+	public final static String RIESGOSPORANIO = "with notif (departamento, semana, cantidad) as"+
+			" (select noti.departamento, CAST(coalesce(noti.semana, '0') AS integer) as semana, count(*) as cantidad from notificacion noti where anio='{0}' "+
+			"	and semana not like '999' group by departamento, semana order by CAST(coalesce(noti.semana, '0') AS integer), departamento),"+
+			" cuartiles (departamento, cuartil_uno, cuartil_dos, cuartil_tres) as"+
+			" (select departamento, CAST(coalesce(cuartil_uno, '0') AS integer), CAST(coalesce(cuartil_dos, '0') AS integer), CAST(coalesce(cuartil_tres, '0') AS integer) from cuartiles_por_distrito where tipo='D')"+
+			" select n.departamento, n.semana, n.cantidad,"+
+			" (CASE WHEN n.cantidad <= c.cuartil_uno THEN 'RB' "+
+			"	WHEN n.cantidad <= c.cuartil_dos THEN 'RM'"+
+			"	WHEN n.cantidad <= c.cuartil_tres THEN 'RA'"+
+			"	ELSE 'E' END ) as riesgo"+
+			" from notif n"+
+			" full join cuartiles c"+
+			" on (n.departamento=c.departamento)";
+	
+	
+	public final static String NOTIFFILTRADASMAP = "select count(*) as cantidad, departamento, semana, anio from notificacion where anio = '{0}' {1} group by anio, semana, departamento order by semana";
 
-	public static String URL_ENLACE_INVALIDO = "/public/enlace_invalido.html";
-	public static String URL_ENLACE_EXPIRADO = "/public/enlace_expirado.html";
-	
-	public static String URL_PERMISO_READ = "/secure/permiso_read_only";
-	public static String URL_BOOKMARK_READ = "/secure/bookmark_read_only";
-	public static String URL_USUARIO_READ = "/secure/usuario_read_only";
-	public static String URL_ROL_READ = "/secure/rol_read_only";
-	
-	public static String URL_PERMISO_EDIT = "/secure/permiso_edit";
-	public static String URL_BOOKMARK_EDIT = "/secure/bookmark_edit";
-	public static String URL_USUARIO_EDIT = "/secure/usuario_edit";
-	public static String URL_ROL_EDIT = "/secure/rol_edit";
-	
-	/** TAMAÑO DE PAGINA **/
-	public static int PAGE_SIZE = 8;
-
-	/** LONGITUD DEL HASH **/
-	public static int HASH_SIZE = 64;
+	public final static String NOTIFPORANIO = "select noti.departamento, CAST(coalesce(noti.semana, '0') AS integer) as semana, count(*) as cantidad from notificacion noti where anio='{0}' and semana not like '#VALUE!' group by departamento, semana order by CAST(coalesce(noti.semana, '0') AS integer), departamento";
 }
