@@ -48,8 +48,9 @@
 	<artifactId>denguemaps</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-
-	<name>Bookmarks App</name>
+	
+	
+	<name>Dengue Maps Server</name>
 	<description>Ejemplo usando Tekoporu y Ext JS</description>
 	<url></url>
 
@@ -58,7 +59,11 @@
 		<artifactId>tekoporu-jax-rs-parent</artifactId>
 		<version>2.3.0-SNAPSHOT</version>
 	</parent>
-
+	
+	<build>
+		<finalName>denguemaps</finalName>
+	</build>
+	
 	<dependencies>
 		<!-- <dependency>
 			<groupId>app-common</groupId>
